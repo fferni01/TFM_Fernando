@@ -29,7 +29,8 @@ def start_attack():
     global r
     r = ResultSet([])
     #ips = ["152.148.48." + str(i) for i in range(8, 209)]
-    ips = randomize_ip()
+    ips=["140.30.20.5"]
+    #ips = randomize_ip()
     #ports = [80, 443, 8080]
     ports= [80]
     for port in ports:
@@ -44,7 +45,7 @@ def randomize_ip():
 def end_attacks():
     global r
     r.join()
-    if r.ready():
+    if r.ready() == True:
         end_attack()
 
 if __name__ == '__main__':

