@@ -1,0 +1,9 @@
+lab_attacks: 
+  attackers: 1
+  slaves: 1
+  sampling: 
+    enabled: false
+    packet_sampling: 1
+  networks:
+    internal_net: 140.30.20.0
+    attacker_net: 152.148.48.0
