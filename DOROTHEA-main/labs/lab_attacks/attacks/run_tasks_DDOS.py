@@ -28,7 +28,7 @@ import random
 def start_attack():
     global r
     r = ResultSet([])
-    #ips = ["152.148.48." + str(i) for i in range(8, 209)]
+    
     ips=["140.30.20.5"]
     #ips = randomize_ip()
     #ports = [80, 443, 8080]

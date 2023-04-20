@@ -18,11 +18,11 @@
 ## along with this program. If not, see <http://www.gnu.org/licenses/>.
 ##
  lab_attacks: 
-  attackers: 1
+  attackers: 5
   slaves: 1
   sampling: 
-    enabled: true
-    packet_sampling: 1
+    enabled: false
+    packet_sampling: 1000
   networks:
     internal_net: 140.30.20.0
     attacker_net: 152.148.48.0
@@ -30,13 +30,13 @@
 
 
  lab_normal: 
-  generators: 5
+  generators: 3
   mailing:
     username: gripapc@gmail.com
     password: dasynnplbeudcdvq
     smtp: smtp.gmail.com
   sampling: 
-    enabled: true
+    enabled: false
     packet_sampling: 1
   networks:
     internal_net: 152.148.48.0

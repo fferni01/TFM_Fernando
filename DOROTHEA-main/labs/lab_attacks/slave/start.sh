@@ -24,6 +24,7 @@ route add default gw 140.30.20.2
 
 route del default gw 140.30.20.1
 
-service apache2 start
+service apache2 start &
+
 /bin/bash
 

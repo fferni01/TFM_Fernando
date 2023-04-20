@@ -17,4 +17,4 @@ When we want to stop go generate normal traffic, we write save and automatically
 
 * If we want to clean the entire environment of the lab run: 
 
-`sudo python3 run.py -c`
+`sudo python3 run.py -c -t netflow`

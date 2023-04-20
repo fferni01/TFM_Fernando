@@ -43,8 +43,10 @@ RUN DEBIAN_FRONTEND=noninteractive TZ=Etc/UTC apt-get -y install tzdata
 RUN apt-get -y install iptables-dev; exit 0
 RUN apt-get -y install libxtables-dev iptables-netflow-dkms; exit 0
 RUN apt-get -y install iptables libxtables-dev iptables-netflow-dkms pkg-config 
-RUN DEBIAN_FRONTEND=noninteractive /usr/bin/apt-get install -y -q --allow-change-held-packages linux-image-$(uname -r)
+#RUN DEBIAN_FRONTEND=noninteractive /usr/bin/apt-get install -y -q --allow-change-held-packages linux-image-$(uname -r)
+#RUN DEBIAN_FRONTEND=noninteractive /usr/bin/apt-get install -y -q --allow-change-held-packages linux-image-5.19.0-35-generic 
 RUN apt-get -y install linux-headers-$(uname -r)
+#RUN apt-get -y update && apt-get -y install linux-headers-5.19.0-35-generic 
 RUN apt-get -y install cron
 
 #Install mergecap included in Wireshark and libcap since CIC needs this dependency
