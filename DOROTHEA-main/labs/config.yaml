@@ -18,7 +18,7 @@
 ## along with this program. If not, see <http://www.gnu.org/licenses/>.
 ##
  lab_attacks: 
-  attackers: 5
+  attackers: 1
   slaves: 1
   sampling: 
     enabled: false
@@ -30,7 +30,7 @@
 
 
  lab_normal: 
-  generators: 3
+  generators: 5
   mailing:
     username: gripapc@gmail.com
     password: dasynnplbeudcdvq
