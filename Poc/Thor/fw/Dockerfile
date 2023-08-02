@@ -20,5 +20,6 @@ EXPOSE 80
 COPY ./start.sh .
 
 RUN chmod +x start.sh
+RUN sed -i -e 's/\r$//' ./start.sh
 
 CMD ["./start.sh"]

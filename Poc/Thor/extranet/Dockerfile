@@ -1,11 +1,15 @@
 #Fernando Fernández Iglesias
 
-FROM ubuntu:18.04
+#FROM ubuntu:18.04
+FROM ubuntu:20.04
+ENV TZ=Europe/Madrid
+RUN apt-get update && apt-get install -y tzdata
 
 RUN apt-get update && apt-get install -y openssh-server net-tools iputils-ping traceroute vim nano iproute2 iptables pkg-config nmap tcpdump libpcap-dev libnet-dev autoconf gcc make automake git python2.7 python
 
-RUN git clone https://github.com/dotfighter/torshammer.git
+#RUN git clone https://github.com/dotfighter/torshammer.git
 
+RUN git clone https://github.com/Karlheinzniebuhr/torshammer
 RUN mkdir /var/run/sshd
 RUN echo 'root:root' |chpasswd
 RUN sed -ri 's/^#?PermitRootLogin\s+.*/PermitRootLogin yes/' /etc/ssh/sshd_config
@@ -19,5 +23,5 @@ EXPOSE 80
 COPY ./start.sh .
 
 RUN chmod +x start.sh
-
+RUN sed -i -e 's/\r$//' ./start.sh
 CMD ["./start.sh"]

@@ -1,13 +1,9 @@
-#Fernando Fernández Iglesias
-
-FROM ubuntu:18.04
+FROM httpd:latest
 
 RUN apt-get update 
 
-RUN apt-get install -y openssh-server net-tools iputils-ping traceroute vim nano iproute2 iptables pkg-config nmap tcpdump
+RUN apt-get install -y openssh-server net-tools iputils-ping traceroute vim nano iproute2 iptables pkg-config htop
 
-RUN apt-get install -y apache2  
-    
 RUN mkdir /var/run/sshd
 RUN echo 'root:root' |chpasswd
 RUN sed -ri 's/^#?PermitRootLogin\s+.*/PermitRootLogin yes/' /etc/ssh/sshd_config
@@ -21,5 +17,9 @@ EXPOSE 80
 COPY ./start.sh .
 
 RUN chmod +x start.sh
+RUN sed -i -e 's/\r$//' ./start.sh
 
 CMD ["./start.sh"]
+
+
+
